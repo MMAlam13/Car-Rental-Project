@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bharat Rental Service Pvt.Ltd - Find Your Perfect Ride </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        box-shadow: 2px 1px 2px #eee;
+      ">
+        <a href="index.html">
+            <img src=" logo\logo.png" width="200" height="150px" style="padding-top: 20px; border-radius: 100%;" />
+        </a>
+
+        <div><a href="index.html" class="name">
+                <h1>Bharat Rental Service Pvt.Ltd</h1>
+            </a>
+        </div>
+
+        <div style="display: flex;
+           justify-content: flex-end;
+           padding-top: 50px;
+           ">
+            <div><a href="index.html" class="nav-link">Home</a></div>
+            <div><a href="my-bookings.html" class="nav-link">My Bookings</a></div>
+            <div><a href="admin.html" class="nav-link">Admin</a></div>
+        </div>
+
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-header">
+                <h2><i class="fas fa-calendar-check"></i> Complete Your Booking</h2>
+                <p style="color: white;">Please fill in your details to confirm your car rental</p>
+            </div>
+
+            <div class="booking-container">
+                <!-- Car Details -->
+                <div class="car-summary">
+                    <h3><i class="fas fa-car-side"></i> Selected Car</h3>
+                    <div id="carDetails" class="car-details-card">
+                        <!-- Car details will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <h3><i class="fas fa-user"></i> Your Information</h3>
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-section">
+                            <h4>Personal Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerName">
+                                        <i class="fas fa-user"></i> Full Name *
+                                    </label>
+                                    <input type="text" id="customerName" name="customerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="customerEmail">
+                                        <i class="fas fa-envelope"></i> Email Address *
+                                    </label>
+                                    <input type="email" id="customerEmail" name="customerEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerPhone">
+                                        <i class="fas fa-phone"></i> Phone Number *
+                                    </label>
+                                    <input type="tel" id="customerPhone" name="customerPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="licenseNumber">
+                                        <i class="fas fa-id-card"></i> License Number
+                                    </label>
+                                    <input type="text" id="licenseNumber" name="licenseNumber">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Rental Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pickupDate">
+                                        <i class="fas fa-calendar-alt"></i> Pick-up Date & Time *
+                                    </label>
+                                    <input type="datetime-local" id="pickupDate" name="pickupDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="returnDate">
+                                        <i class="fas fa-calendar-check"></i> Return Date & Time *
+                                    </label>
+                                    <input type="datetime-local" id="returnDate" name="returnDate" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pickupLocation">
+                                        <i class="fas fa-map-marker-alt"></i> Pick-up Location
+                                    </label>
+                                    <select id="pickupLocation" name="pickupLocation">
+                                        <option value="Main Branch">India Gate</option>
+                                        <option value="Airport">IGI Airport</option>
+                                        <option value="Downtown">Hauz Khas</option>
+                                        <option value="Mall Plaza">Jama Masjid</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="returnLocation">
+                                        <i class="fas fa-map-marker-alt"></i> Return Location
+                                    </label>
+                                    <select id="returnLocation" name="returnLocation">
+                                        <option value="Main Branch">India Gate</option>
+                                        <option value="Airport">IGI Airport</option>
+                                        <option value="Downtown">Hauz Khas</option>
+                                        <option value="Mall Plaza">Jama Masjid</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Additional Information</h4>
+                            <div class="form-group">
+                                <label for="customerNotes">
+                                    <i class="fas fa-comment"></i> Special Requests or Notes
+                                </label>
+                                <textarea id="customerNotes" name="customerNotes" rows="3"
+                                    placeholder="Any special requests, accessibility needs, or additional information..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Summary -->
+                        <div class="pricing-summary">
+                            <h4><i class="fas fa-calculator"></i> Pricing Summary</h4>
+                            <div class="pricing-details">
+                                <div class="pricing-row">
+                                    <span>Daily Rate:</span>
+                                    <span id="dailyRate">₹0.00</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>Number of Days:</span>
+                                    <span id="totalDays">0</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal">₹0.00</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>Taxes (10%):</span>
+                                    <span id="taxes">₹0.00</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>Processing Fee:</span>
+                                    <span id="fees">₹250.00</span>
+                                </div>
+                                <div class="pricing-row total">
+                                    <span><strong>Total Amount:</strong></span>
+                                    <span id="totalAmount"><strong>₹250.00</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="terms-section">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsAccepted" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms and Conditions</a> and <a href="#"
+                                    target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="history.back()">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-credit-card"></i> Confirm Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Booking Confirmed!</h3>
+            <p>Your booking has been successfully created.</p>
+            <div class="booking-details">
+                <p><strong>Booking ID:</strong> <span id="confirmationId"></span></p>
+                <p><strong>Total Amount:</strong> <span id="confirmationAmount"></span></p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="redirectToBookings()">
+                    View My Bookings
+                </button>
+                <button class="btn-secondary" onclick="closeModal()">
+                    Continue Browsing
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="booking.js"></script>
+</body>
+
+</html>

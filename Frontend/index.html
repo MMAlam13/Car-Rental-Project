@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bharat Rental Service Pvt.Ltd - Find Your Perfect Ride</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        box-shadow: 2px 1px 2px #eee;
+      ">
+        <a href="index.html">
+            <img src=" logo\logo.png" width="200" height="150px" style="padding-top: 20px; border-radius: 100%;" />
+        </a>
+
+        <div><a href="index.html" class="name">
+                <h1>Bharat Rental Service Pvt.Ltd</h1>
+            </a>
+        </div>
+
+        <div style="display: flex;
+           justify-content: flex-end;
+           padding-top: 50px;
+           ">
+            <div><a href="index.html" class="nav-link">Home</a></div>
+            <div><a href="my-bookings.html" class="nav-link">My Bookings</a></div>
+            <div><a href="admin.html" class="nav-link">Admin</a></div>
+        </div>
+
+    </div>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Find Your Perfect Rental Car with Clean Air</h1>
+            <p>Choose from our premium fleet of vehicles for your next adventure</p>
+
+            <!-- Search Form -->
+            <div class="search-card">
+                <form class="search-form" id="searchForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-alt"></i> Pick-up Date</label>
+                            <input type="datetime-local" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-check"></i> Return Date</label>
+                            <input type="datetime-local" id="endDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-car-side"></i> Category</label>
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Economy">Economy</option>
+                                <option value="Compact">Compact</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Luxury">Luxury</option>
+                                <option value="Sports">Sports</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-dollar-sign"></i> Budget</label>
+                            <select id="budgetFilter">
+                                <option value="">Any Price</option>
+                                <option value="0-50">₹100- ₹500</option>
+                                <option value="50-100">₹500 - ₹1000</option>
+                                <option value="100-200">₹1000 - ₹2000</option>
+                                <option value="200+">₹2000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Search Available Cars
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Transmission:</label>
+                    <select id="transmissionFilter">
+                        <option value="">Any</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Fuel Type:</label>
+                    <select id="fuelFilter">
+                        <option value="">Any</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Seats:</label>
+                    <select id="seatsFilter">
+                        <option value="">Any</option>
+                        <option value="2">2 Seats</option>
+                        <option value="4">4 Seats</option>
+                        <option value="5">5 Seats</option>
+                        <option value="7">7+ Seats</option>
+                    </select>
+                </div>
+                <button class="clear-filters" onclick="clearFilters()">
+                    <i class="fas fa-times"></i> Clear Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section class="cars-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Cars</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <div class="loader"></div>
+                <p>Loading amazing cars for you...</p>
+            </div>
+
+            <!-- Cars Grid -->
+            <div id="carsGrid" class="cars-grid">
+                <!-- Cars will be populated here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn" style="display: none;">
+                    Load More Cars
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-car"></i>
+                    <h3 id="totalCars">0</h3>
+                    <p>Total Cars</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 id="happyCustomers">1000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>25+</h3>
+                    <p>Locations</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7</h3>
+                    <p>Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-car"></i> Bharat Rental Service Pvt.Ltd</h3>
+                    <p>Your trusted partner for premium car rental experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="my-bookings.html">My Bookings</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9693493895 </p>
+                        <p><i class="fas fa-envelope"></i> support@gogreen.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Nodia,62 Sector Near Metro Pillar
+                            No.31-Uttarpradesh(201309)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bharat Rental Service Pvt.Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

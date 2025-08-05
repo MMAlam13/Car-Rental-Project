@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bharat Rental Service Pvt.Ltd - Find Your Perfect Ride</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        box-shadow: 2px 1px 2px #eee;
+      ">
+        <a href="index.html">
+            <img src=" logo\logo.png" width="200" height="150px" style="padding-top: 20px; border-radius: 100%;" />
+        </a>
+
+        <div><a href="index.html" class="name">
+                <h1>Bharat Rental Service Pvt.Ltd</h1>
+            </a>
+        </div>
+
+        <div style="display: flex;
+           justify-content: flex-end;
+           padding-top: 50px;
+           ">
+            <div><a href="index.html" class="nav-link">Home</a></div>
+            <div><a href="my-bookings.html" class="nav-link">My Bookings</a></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-header">
+                    <h2>Find My Bookings</h2>
+                    <form id="searchBookingsForm" style="margin-bottom:3rem;">
+                        <input type="email" style="padding: 1rem 2rem; margin-top: 1rem; gap: 5px;" id="searchEmail"
+                            placeholder="Your booking email" required>
+                        <button type="submit" class="search-btn">Show Bookings</button>
+                    </form>
+                    <div id="myBookingsTable" class="table-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="my-booking.js"></script>
+</body>
+
+</html>

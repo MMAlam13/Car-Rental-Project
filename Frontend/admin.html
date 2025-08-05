@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Bharat Rental Service Pvt.Ltd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        box-shadow: 2px 1px 2px #eee;
+      ">
+        <a href="index.html">
+            <img src=" logo\logo.png" width="200" height="150px" style="padding-top: 20px; border-radius: 100%;" />
+        </a>
+
+        <div><a href="index.html" class="name">
+                <h1>Bharat Rental Service Pvt.Ltd</h1>
+            </a>
+        </div>
+
+        <div style="display: flex;
+           justify-content: flex-end;
+           padding-top: 50px;
+           ">
+            <div><a href="index.html" class="nav-link">Home</a></div>
+            <div><a href="admin.html" class="nav-link">Admin</a></div>
+        </div>
+
+    </div>
+    <main>
+        <section class="admin-section">
+            <div class="container">
+                <div class="admin-tabs">
+                    <button class="tab-btn active" onclick="showTab('cars')">Cars</button>
+                    <button class="tab-btn" onclick="showTab('bookings')">Bookings</button>
+                </div>
+                <!-- Cars Tab -->
+                <div id="carsTab" class="tab-content active">
+                    <div class="section-header">
+                        <h3>Manage Cars</h3>
+                        <button onclick="showCarForm()" class="add-btn">Add Car</button>
+                    </div>
+                    <!-- Add/Edit Form -->
+                    <div id="carFormContainer" style="display:none;">
+                        <form id="carForm">
+                            <input type="hidden" id="carId">
+                            <input type="text" id="brand" placeholder="Brand" required>
+                            <input type="text" id="model" placeholder="Model" required>
+                            <input type="number" id="year" placeholder="Year" min="2000" max="2035" required>
+                            <input type="text" id="licensePlate" placeholder="License Plate" required>
+                            <input type="number" id="dailyRate" placeholder="Daily Rate" min="1" required>
+                            <input type="text" id="category" placeholder="Category (Economy, SUV, Compact)" required>
+                            <input type="url" id="imageUrl" placeholder="Image URL">
+                            <button type="submit" class="save-btn">Save</button>
+                            <button type="button" class="cancel-btn" onclick="hideCarForm()">Cancel</button>
+                        </form>
+                    </div>
+                    <div id="carsTable" class="table-container"></div>
+                </div>
+                <!-- Bookings Tab -->
+                <div id="bookingsTab" class="tab-content">
+                    <div class="section-header">
+                        <h3>All Bookings</h3>
+                    </div>
+                    <div id="bookingsTable" class="table-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+
+</html>
