@@ -5,6 +5,7 @@ const Car = require('../models_routes_car');
 const Booking = require('../models_routes_booking');
 const { validateCar } = require('../middleware_validation');
 
+
 // Get all cars with filtering
 router.get('/', async (req, res) => {
     try {
