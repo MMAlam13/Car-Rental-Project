@@ -3,7 +3,7 @@ This Car Rental Booking System MVP successfully addresses the core challenges of
 
 **A minimal yet complete Car Rental Booking System with:**
 
-• Node.js + Express.js (REST API backend)
+• Node.js + Express.js (REST API backend) <br>
 • MongoDB (via Mongoose)
 • HTML/CSS/JavaScript frontend
 • Modern admin panel and booking UI
