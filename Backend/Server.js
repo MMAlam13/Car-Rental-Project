@@ -22,7 +22,7 @@ app.use(limiter);
 
 // Middleware
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:8000/client',
+    origin: process.env.CLIENT_URL || 'http://localhost:4000/client',
     credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
