@@ -19,35 +19,35 @@ This Car Rental Booking System MVP successfully addresses the core challenges of
 • Simple JWT-based admin authentication (optional) <br>
 • Ultra portable: just Node and MongoDB, no frameworks or build steps <br>
 
-Car-Rental-/
-├── backend/
-│   ├── server.js
-│   ├── package.json
-│   ├── config/
-│   │   └── database.js
-│   ├── models/
-│   │   ├── Car.js
-│   │   └── Booking.js
-│   ├── routes/
-│   │   ├── cars.js
-│   │   └── bookings.js
-│   ├── middleware/
-│   │   └── validation.js
-│   └── utils/
-│       └── helpers.js
-├── frontend/
-│   ├── index.html
-│   ├── booking.html
-│   ├── admin.html
-│   ├── my-bookings.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       ├── app.js
-│       ├── booking.js
-│       ├── admin.js
-│       └── mybookings.js
-└── README.md
+Car-Rental-/ <br>
+├── backend/ <br>
+│   ├── server.js <br>
+│   ├── package.json <br>
+│   ├── config/ <br>
+│   │   └── database.js <br>
+│   ├── models/ <br>
+│   │   ├── Car.js <br>
+│   │   └── Booking.js <br>
+│   ├── routes/ <br>
+│   │   ├── cars.js <br>
+│   │   └── bookings.js <br>
+│   ├── middleware/ <br>
+│   │   └── validation.js <br>
+│   └── utils/ <br>
+│       └── helpers.js <br>
+├── frontend/ <br>
+│   ├── index.html <br>
+│   ├── booking.html <br>
+│   ├── admin.html <br>
+│   ├── my-bookings.html <br>
+│   ├── css/ <br>
+│   │   └── style.css <br>
+│   └── js/ <br>
+│       ├── app.js <br>
+│       ├── booking.js <br>
+│       ├── admin.js <br>
+│       └── mybookings.js <br>
+└── README.md <br> 
 
 **⚡️ Quickstart**
 
@@ -94,7 +94,7 @@ Visit *http://localhost:8000/index.html* <br>
 
 **API URL in Frontend** <br>
 • See *frontend/js/app.js* and other JS: <br>
-  Const **API_BASE_URL =** *'http://localhost:8000/api'* <br>
+   Const **API_BASE_URL =** *'http://localhost:8000/api'* <br>
 • Update if you move *backend/server* <br>
 
 **👩💻 Development Workflow**
@@ -150,7 +150,7 @@ Visit *http://localhost:8000/index.html* <br>
 • **Starter system:** MD MERAJ ALAM <br> 
 • **Stack:** Node.js, Express, MongoDB, Mongoose, Vanilla JS, HTML5, CSS3 <br> 
 
-#THANK YOU !
+**# THANK YOU !**
 
 
 
